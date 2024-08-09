@@ -1,7 +1,51 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Lista De Compras</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Lista De Compras</h1>
 
-Welcome to your new app.
+<div class="row">
+    <div class="col-md-2">
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Categoria:</label>
+                <select class="form-select">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+            <a asp-action="Index" asp-route-id="" class="btn btn-primary">Limpar</a>
+        </form>
+    </div>
+    <div class="col-md-10">
+        <form action="/" method="post">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Produto</td>
+                        <td>Valor</td>
+                        <td>Categoria</td>
+                        <td>Comprado</td>
+                        <td>Link</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Produto</td>
+                        <td>Valor</td>
+                        <td>Categoria</td>
+                        <td>Comprado</td>
+                        <td>Link</td>
+                        <td>
+                        <button class="btn btn-success">Editar</button>
+                        <button class="btn btn-danger">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <from>
+            <a href="AddProduto" class="btn btn-success">Adicionar produto</a>
+        </from>
+    </div>
+</div>

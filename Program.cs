@@ -1,6 +1,12 @@
 using ListaDeCompras.Components;
+using ListaDeCompras.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ListaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("StringPadrao"))
+    );
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
