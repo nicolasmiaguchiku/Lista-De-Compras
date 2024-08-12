@@ -1,51 +1,96 @@
 ﻿@page "/"
+@using System.Globalization
+@inject IListaInterface listaServices
 
 <PageTitle>Lista De Compras</PageTitle>
 
 <h1>Lista De Compras</h1>
 
-<div class="row">
-    <div class="col-md-2">
-        <form method="post">
-            <div class="mb-3">
-                <label class="form-label">Categoria:</label>
-                <select class="form-select">
-                    <option value="todos">Todos</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Filtrar</button>
-            <a asp-action="Index" asp-route-id="" class="btn btn-primary">Limpar</a>
-        </form>
+@if(products.Count > 0)
+{
+    <div class="row">
+        <div class="col-md-2">
+            <EditForm Model="@products">
+                <div class="mb-3">
+                    <label class="form-label">Categoria:</label>
+                    <InputSelect class="form-select" @bind-Value="@products">
+                        <option value="todos">Todos</option>
+                        @foreach(var category in Enum.GetValues(typeof(ProductCategory)))
+                        {
+                            <option value="@category">@category</option>
+                        }
+                    </InputSelect>
+                </div>
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+                <a asp-action="Index" asp-route-id="" class="btn btn-primary">Limpar</a>
+            </EditForm>
+        </div>
+        <div class="col-md-10">
+            <form action="/" method="post">
+                <table class="table table-striped" style="text-align: center">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Valor</th>
+                            <th>Categoria</th>
+                            <th>Link</th>
+                            <th>Comprado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in products)
+                        {
+                            <tr style="cursor: pointer;" class="@(product.Bought == true ? "table-success" : "")">
+                                <td>@product.Name</td>
+                                <td>@FormatPrice((decimal)product.Price)</td>
+                                <td>@product.Category</td>
+                                <td>
+                                    <a class="btn btn-link" href="@product.Link" target="_blank">Clique aqui</a>
+                                </td>
+                                <td>
+                                    @(product.Bought ? "Sim" : "Não")
+                                </td>
+                                <td>
+                                    <button class="btn btn-success">Editar</button>
+                                    <button class="btn btn-danger" @onclick="()=> Deleteproduct(product.Id)">Excluir</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </form>
+            <from>
+                <a href="AddProduto" class="btn btn-success">Adicionar produto</a>
+            </from>
+        </div>
     </div>
-    <div class="col-md-10">
-        <form action="/" method="post">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <td>Produto</td>
-                        <td>Valor</td>
-                        <td>Categoria</td>
-                        <td>Comprado</td>
-                        <td>Link</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Produto</td>
-                        <td>Valor</td>
-                        <td>Categoria</td>
-                        <td>Comprado</td>
-                        <td>Link</td>
-                        <td>
-                        <button class="btn btn-success">Editar</button>
-                        <button class="btn btn-danger">Excluir</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-        <from>
-            <a href="AddProduto" class="btn btn-success">Adicionar produto</a>
-        </from>
-    </div>
-</div>
+}
+else
+{
+    <p>Nenhum produto encontrado</p>
+    <from>
+        <a href="AddProduto" class="btn btn-success">Adicionar produto</a>
+    </from>
+}
+
+
+@code
+{
+    private List<Product> products = new List<Product>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await listaServices.GetAllProductsAsync();
+    }
+
+    private string FormatPrice(decimal price)
+    {
+        return price.ToString("N2", new CultureInfo("pt-BR"));
+    }
+
+    public async Task Deleteproduct(int id)
+    {
+        await listaServices.DeleteProduct(id);
+    }
+
+}

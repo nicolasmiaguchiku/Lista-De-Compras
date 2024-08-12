@@ -134,3 +134,4 @@ C:\Users\keila\OneDrive\Área de Trabalho\ListaDeCompras\ListaDeCompras\obj\Debu
 C:\Users\keila\OneDrive\Área de Trabalho\ListaDeCompras\ListaDeCompras\obj\Debug\net8.0\ListaDeCompras.pdb
 C:\Users\keila\OneDrive\Área de Trabalho\ListaDeCompras\ListaDeCompras\obj\Debug\net8.0\ListaDeCompras.genruntimeconfig.cache
 C:\Users\keila\OneDrive\Área de Trabalho\ListaDeCompras\ListaDeCompras\obj\Debug\net8.0\ref\ListaDeCompras.dll
+C:\Users\keila\OneDrive\Área de Trabalho\ListaDeCompras\ListaDeCompras\obj\Debug\net8.0\scopedcss\Components\Pages\AddProduto.razor.rz.scp.css

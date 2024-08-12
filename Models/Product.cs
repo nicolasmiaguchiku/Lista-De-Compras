@@ -3,6 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ListaDeCompras.Models
 {
+
+    public enum ProductCategory
+    {
+        Doméstico = 1,
+        Material = 2,
+        Móvel = 3
+    }
+
     public class Product
     {
         [Key]
@@ -15,10 +23,7 @@ namespace ListaDeCompras.Models
         public double Price { get; set; }
 
         [Required(ErrorMessage = "Categoria do produto obrigatório.")]
-        public string? CategoryId { get; set; }
-
-        [ValidateNever]
-        public Category? Category { get; set; }
+        public ProductCategory Category { get; set; }
 
         [Required(ErrorMessage = "Link do produto obrigatório.")]
         public string? Link { get; set; }

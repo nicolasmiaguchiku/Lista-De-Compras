@@ -1,57 +1,64 @@
 ﻿@page "/AddProduto"
+@inject IListaInterface listaServices
 @rendermode InteractiveServer
 
 <PageTitle>Adicionar Produto</PageTitle>
+
 <div class="form-container">
     <h1>Adicionar Produto</h1>
-    <form>
+    <EditForm Model="@product" OnValidSubmit="@AddNewProduct">
+        <DataAnnotationsValidator />
         <div class="mb-3">
             <label for="productName" class="form form-table">Produto:</label>
-            <input class="form form-control" id="productName" />
+            <InputText class="form form-control" id="productName" placeholder="Digite o nome do produto" @bind-Value="product.Name"/>
+            <ValidationMessage For="@(() => product.Name)" />
         </div>
         <div class="mb-3">
             <label for="productPrice" class="form form-table">Valor:</label>
-            <input class="form form-control" id="productPrice" />
+           <InputNumber class="form form-control" TValue="double" placeholder="Digite o valor do produto" @bind-Value="@product.Price"/>
+            <ValidationMessage For="@(() => product.Price)" />
         </div>
         <div class="mb-3">
             <label>Categoria:</label>
-            <select class="form-select">
-                <option value="null">Selecione</option>
-                <option value="null">Movel</option>
-                <option value="null">Domestico</option>
-                <option value="null">Material</option>
-            </select>
+            <InputSelect class="form-select" @bind-Value=product.Category >
+                <option selected value="">--Selecione--</option>
+                @foreach(var category in Enum.GetValues(typeof(ProductCategory)))
+                {
+                    <option value="@category">@category</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => product.Category)" />
         </div>
         <div class="mb-3">
             <label for="productLink" class="form form-table">Link</label>
-            <input class="form form-control" id="productLink" />
+            <InputText class="form form-control" id="productLink" placeholder="Digite o link do produto" @bind-Value="product.Link" />
+            <ValidationMessage For="@(() => product.Link)" />
+        </div>
+        <label>Comprado:</label>
+        <div class="mb-3">
+            <InputSelect class="form-select" @bind-Value=product.Bought>
+                <option value="false">Não</option>
+                <option value="true">Sim</option>
+            </InputSelect>
         </div>
         <div class="mb-3">
-            <button class="btn btn-success">Adicionar produto</button>
+            <button class="btn btn-success" type="submit">Adicionar produto</button>
             <a class="btn btn-danger" href="/">Cancelar</a>
         </div>
-    </form>
+    </EditForm>
 </div>
 
 @code {
-  
+    private Product product = new Product();
+
+
+    public async Task AddNewProduct()
+    {
+        if (product is not null)
+        {
+            await listaServices.AddProductAsync(product);
+            product = new Product();
+
+        }
+    }
 }
-
-
-<style>
-    .form-container {
-        max-width: 600px;
-        margin: 0 auto; /* Centraliza horizontalmente */
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-container h1{
-        text-align: center;
-    }
-</style>

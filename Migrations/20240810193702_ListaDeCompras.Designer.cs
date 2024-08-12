@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ListaDeCompras.Migrations
 {
     [DbContext(typeof(ListaContext))]
-    [Migration("20240808230754_ListaDeCompras")]
+    [Migration("20240810193702_ListaDeCompras")]
     partial class ListaDeCompras
     {
         /// <inheritdoc />
@@ -24,36 +24,6 @@ namespace ListaDeCompras.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ListaDeCompras.Models.Category", b =>
-                {
-                    b.Property<string>("CategoryId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CategoryName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = "Movel",
-                            CategoryName = "Movel"
-                        },
-                        new
-                        {
-                            CategoryId = "Material",
-                            CategoryName = "Material"
-                        },
-                        new
-                        {
-                            CategoryId = "Domestico",
-                            CategoryName = "Doméstico"
-                        });
-                });
-
             modelBuilder.Entity("ListaDeCompras.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -65,9 +35,8 @@ namespace ListaDeCompras.Migrations
                     b.Property<bool>("Bought")
                         .HasColumnType("bit");
 
-                    b.Property<string>("CategoryId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Category")
+                        .HasColumnType("int");
 
                     b.Property<string>("Link")
                         .IsRequired()
@@ -82,20 +51,7 @@ namespace ListaDeCompras.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("ListaDeCompras.Models.Product", b =>
-                {
-                    b.HasOne("ListaDeCompras.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

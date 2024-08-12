@@ -1,6 +1,7 @@
 using ListaDeCompras.Components;
 using ListaDeCompras.Context;
 using Microsoft.EntityFrameworkCore;
+using ListaDeCompras.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,11 +9,14 @@ builder.Services.AddDbContext<ListaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("StringPadrao"))
     );
 
+builder.Services.AddScoped<IListaInterface, ListaServices>();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

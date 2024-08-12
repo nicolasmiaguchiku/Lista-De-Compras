@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\services\\listaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:services\\listaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\components\\pages\\addproduto.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:components\\pages\\addproduto.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\migrations\\20240808230754_listadecompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:migrations\\20240808230754_listadecompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\services\\ilistainteterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|solutionrelative:services\\ilistainteterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E828D0AF-B13C-4753-89D9-92EC6B313154}|ListaDeCompras.csproj|c:\\users\\keila\\onedrive\\\u00E1rea de trabalho\\listadecompras\\listadecompras\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,15 +38,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T19:59:12.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAGAAAA",
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAwwDYAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-09T00:17:51.542Z",
+              "WhenOpened": "2024-08-10T19:46:02.04Z",
               "EditorCaption": ""
             },
             {
@@ -73,100 +70,35 @@
               "RelativeDocumentMoniker": "Components\\Pages\\AddProduto.razor",
               "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Pages\\AddProduto.razor",
               "RelativeToolTip": "Components\\Pages\\AddProduto.razor",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAACsAAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-08T23:59:31.375Z",
+              "WhenOpened": "2024-08-10T19:45:59.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "Components\\Pages\\Home.razor",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACkAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-08T23:12:54.792Z",
+              "Title": "ListaServices.cs",
+              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Services\\ListaServices.cs",
+              "RelativeDocumentMoniker": "Services\\ListaServices.cs",
+              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Services\\ListaServices.cs",
+              "RelativeToolTip": "Services\\ListaServices.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwCAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T19:45:49.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-08T23:12:07.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20240808230754_ListaDeCompras.cs",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Migrations\\20240808230754_ListaDeCompras.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240808230754_ListaDeCompras.cs",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Migrations\\20240808230754_ListaDeCompras.cs",
-              "RelativeToolTip": "Migrations\\20240808230754_ListaDeCompras.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Title": "IListaInteterface.cs",
+              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Services\\IListaInteterface.cs",
+              "RelativeDocumentMoniker": "Services\\IListaInteterface.cs",
+              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Services\\IListaInteterface.cs",
+              "RelativeToolTip": "Services\\IListaInteterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T23:08:10.755Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "Components\\_Imports.razor",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Components\\_Imports.razor",
-              "RelativeToolTip": "Components\\_Imports.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-08T23:05:55.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T22:49:47.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Models\\Category.cs",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Models\\Category.cs",
-              "RelativeToolTip": "Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T22:39:40.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Models\\Product.cs",
-              "ToolTip": "C:\\Users\\keila\\OneDrive\\\u00C1rea de Trabalho\\ListaDeCompras\\ListaDeCompras\\Models\\Product.cs",
-              "RelativeToolTip": "Models\\Product.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAgwBIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T01:01:07.239Z",
+              "WhenOpened": "2024-08-10T19:45:38.518Z",
               "EditorCaption": ""
             }
           ]
