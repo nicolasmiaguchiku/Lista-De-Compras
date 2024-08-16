@@ -2,6 +2,7 @@ using ListaDeCompras.Components;
 using ListaDeCompras.Context;
 using Microsoft.EntityFrameworkCore;
 using ListaDeCompras.Services;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddDbContext<ListaContext>(options =>
     );
 
 builder.Services.AddScoped<IListaInterface, ListaServices>();
+
+
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

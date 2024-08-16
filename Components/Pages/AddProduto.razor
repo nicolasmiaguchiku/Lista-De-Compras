@@ -8,6 +8,7 @@
     <h1>Adicionar Produto</h1>
     <EditForm Model="@product" OnValidSubmit="@AddNewProduct">
         <DataAnnotationsValidator />
+         <ValidationSummary />
         <div class="mb-3">
             <label for="productName" class="form form-table">Produto:</label>
             <InputText class="form form-control" id="productName" placeholder="Digite o nome do produto" @bind-Value="product.Name"/>
@@ -15,16 +16,16 @@
         </div>
         <div class="mb-3">
             <label for="productPrice" class="form form-table">Valor:</label>
-           <InputNumber class="form form-control" TValue="double" placeholder="Digite o valor do produto" @bind-Value="@product.Price"/>
-            <ValidationMessage For="@(() => product.Price)" />
+           <InputNumber class="form form-control" TValue="double?" placeholder="Digite o valor do produto" @bind-Value="@product.Price"/>
+           <ValidationMessage For="@(() => product.Price)" />
         </div>
         <div class="mb-3">
             <label>Categoria:</label>
-            <InputSelect class="form-select" @bind-Value=product.Category >
-                <option selected value="">--Selecione--</option>
+            <InputSelect class=" form form-select" @bind-Value=product.Category >
+                <option value="">--Selecione--</option> 
                 @foreach(var category in Enum.GetValues(typeof(ProductCategory)))
                 {
-                    <option value="@category">@category</option>
+                  <option value="@category">@category</option>
                 }
             </InputSelect>
             <ValidationMessage For="@(() => product.Category)" />
@@ -54,6 +55,7 @@
 
     public async Task AddNewProduct()
     {
+
         if (product is not null)
         {
             await listaServices.AddProductAsync(product);

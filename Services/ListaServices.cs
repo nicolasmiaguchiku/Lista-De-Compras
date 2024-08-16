@@ -26,12 +26,14 @@ namespace ListaDeCompras.Services
 
         }
 
-        public async Task DeleteProduct(int id)
+        public async Task DeleteProductAsync(int id)
         {
-            var prd = _context.Products.Find(id);
-
-            _context.Remove(prd);
-            await _context.SaveChangesAsync();
+            var product = _context.Products.Find(id);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+            }
 
         }
     }

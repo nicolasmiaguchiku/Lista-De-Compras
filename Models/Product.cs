@@ -23,7 +23,7 @@ namespace ListaDeCompras.Models
         public double Price { get; set; }
 
         [Required(ErrorMessage = "Categoria do produto obrigatório.")]
-        public ProductCategory Category { get; set; }
+        public ProductCategory Category { get; set; } = default(ProductCategory);
 
         [Required(ErrorMessage = "Link do produto obrigatório.")]
         public string? Link { get; set; }
