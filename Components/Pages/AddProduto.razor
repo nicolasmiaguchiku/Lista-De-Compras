@@ -1,6 +1,7 @@
 ﻿@page "/AddProduto"
 @inject IListaInterface listaServices
 @rendermode InteractiveServer
+@inject NavigationManager NavigationManager
 
 <PageTitle>Adicionar Produto</PageTitle>
 
@@ -8,39 +9,39 @@
     <h1>Adicionar Produto</h1>
     <EditForm Model="@product" OnValidSubmit="@AddNewProduct">
         <DataAnnotationsValidator />
-         <ValidationSummary />
         <div class="mb-3">
             <label for="productName" class="form form-table">Produto:</label>
-            <InputText class="form form-control" id="productName" placeholder="Digite o nome do produto" @bind-Value="product.Name"/>
+            <InputText class="form form-control" id="productName" placeholder="Digite o nome do produto" @bind-Value="@product.Name" />
             <ValidationMessage For="@(() => product.Name)" />
         </div>
         <div class="mb-3">
             <label for="productPrice" class="form form-table">Valor:</label>
-           <InputNumber class="form form-control" TValue="double?" placeholder="Digite o valor do produto" @bind-Value="@product.Price"/>
-           <ValidationMessage For="@(() => product.Price)" />
+            <InputNumber class="form form-control" TValue="double" placeholder="Digite o valor do produto" @bind-Value="@product.Price" />
+            <ValidationMessage For="@(() => product.Price)" />
         </div>
         <div class="mb-3">
-            <label>Categoria:</label>
-            <InputSelect class=" form form-select" @bind-Value=product.Category >
-                <option value="">--Selecione--</option> 
-                @foreach(var category in Enum.GetValues(typeof(ProductCategory)))
+            <label for="category">Categoria:</label>
+            <InputSelect id="category" class="form-select" @bind-Value="@product.Category">
+                <option value="@(ProductCategory.Nenhum)">--Selecione--</option>
+                @foreach (var category in Enum.GetValues(typeof(ProductCategory)).Cast<ProductCategory>())
                 {
-                  <option value="@category">@category</option>
+                    if (category != ProductCategory.Nenhum)
+                    {
+                        <option value="@category">@category</option>
+                    }
                 }
             </InputSelect>
             <ValidationMessage For="@(() => product.Category)" />
         </div>
         <div class="mb-3">
             <label for="productLink" class="form form-table">Link</label>
-            <InputText class="form form-control" id="productLink" placeholder="Digite o link do produto" @bind-Value="product.Link" />
+            <InputText class="form form-control" id="productLink" placeholder="Digite o link do produto" @bind-Value="@product.Link" />
             <ValidationMessage For="@(() => product.Link)" />
         </div>
-        <label>Comprado:</label>
         <div class="mb-3">
-            <InputSelect class="form-select" @bind-Value=product.Bought>
-                <option value="false">Não</option>
-                <option value="true">Sim</option>
-            </InputSelect>
+            <label>Comprado:</label>
+            <InputCheckbox id="productBought" class="form form-checkbox" @bind-Value="product.Bought" />
+            <label for="productBought">Sim</label>
         </div>
         <div class="mb-3">
             <button class="btn btn-success" type="submit">Adicionar produto</button>
@@ -51,16 +52,25 @@
 
 @code {
     private Product product = new Product();
-
+    private bool isValid = true;
 
     public async Task AddNewProduct()
     {
+
+        isValid = true;
+
+        // Validação personalizada
+        if (product.Category == ProductCategory.Nenhum)
+        {
+            isValid = false;
+            // Adicionar lógica para exibir uma mensagem de erro
+        }
 
         if (product is not null)
         {
             await listaServices.AddProductAsync(product);
             product = new Product();
-
+            NavigationManager.NavigateTo("/");
         }
     }
 }

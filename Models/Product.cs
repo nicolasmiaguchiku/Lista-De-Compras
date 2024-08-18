@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ListaDeCompras.Models
 {
 
     public enum ProductCategory
     {
-        Doméstico = 1,
-        Material = 2,
-        Móvel = 3
+        Nenhum,
+        Doméstico,
+        Material,
+        Móvel
     }
 
     public class Product
@@ -16,16 +16,16 @@ namespace ListaDeCompras.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Nome do produto obrigatório.")]
+        [Required(ErrorMessage = "Nome do produto é obrigatório.")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "Valor do produto obrigatório.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "O valor doproduto é obrigatório")]
         public double Price { get; set; }
 
-        [Required(ErrorMessage = "Categoria do produto obrigatório.")]
-        public ProductCategory Category { get; set; } = default(ProductCategory);
+        [CategoryRequired(ErrorMessage = "Categoria do produto é obrigatório.")]
+        public ProductCategory Category { get; set; }
 
-        [Required(ErrorMessage = "Link do produto obrigatório.")]
+        [Required(ErrorMessage = "Link do produto é obrigatório.")]
         public string? Link { get; set; }
 
         public bool Bought { get; set; }
