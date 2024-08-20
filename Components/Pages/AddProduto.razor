@@ -58,12 +58,9 @@
     {
 
         isValid = true;
-
-        // Validação personalizada
         if (product.Category == ProductCategory.Nenhum)
         {
             isValid = false;
-            // Adicionar lógica para exibir uma mensagem de erro
         }
 
         if (product is not null)

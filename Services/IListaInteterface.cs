@@ -11,5 +11,8 @@ namespace ListaDeCompras.Services
 
         Task DeleteProductAsync(int id);
 
+        Task EditProductAsync(Product product);
+
+        Task<Product?> GetProductByIdAsync(int? id);
     }
 }

@@ -34,7 +34,16 @@ namespace ListaDeCompras.Services
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
             }
+        }
 
+        public async Task EditProductAsync(Product product)
+        {
+
+        }
+
+        public async Task<Product?> GetProductByIdAsync(int? id)
+        {
+            return await _context.Products.FindAsync(id);
         }
     }
 }

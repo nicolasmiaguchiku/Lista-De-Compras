@@ -1,0 +1,75 @@
+﻿@page "/EditProduct/{Id:int}"
+@inject IListaInterface ListaServices
+@inject NavigationManager NavigationManager
+
+<PageTitle>Editar Produto</PageTitle>
+
+<h3>Editar Produto</h3>
+
+@if (product == null)
+{
+    <p>Carregando produto...</p>
+}
+else
+{
+    <EditForm Model="product" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <InputText id="name" class="form-control" @bind-Value="product.Name" />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Preço</label>
+            <InputNumber id="price" class="form-control" @bind-Value="product.Price" />
+        </div>
+
+        <div class="form-group">
+            <label for="category">Categoria</label>
+            <select id="category" class="form-control" @bind="product.Category">
+                @foreach (var category in Enum.GetValues(typeof(ProductCategory)))
+                {
+                    <option value="@category">@category</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="link">Link</label>
+            <InputText id="link" class="form-control" @bind-Value="product.Link" />
+        </div>
+
+        <div class="form-group">
+            <label for="bought">Comprado</label>
+            <InputCheckbox id="bought" class="form-check-input" @bind-Value="product.Bought" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancelar</button>
+    </EditForm>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Product? product;
+
+    protected override async Task OnInitializedAsync()
+    {
+        product = await ListaServices.GetProductByIdAsync(Id);
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        await ListaServices.EditProductAsync(product);
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

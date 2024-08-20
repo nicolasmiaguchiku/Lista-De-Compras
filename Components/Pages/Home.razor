@@ -1,6 +1,8 @@
 ﻿@page "/"
-@inject IListaInterface listaServices
 @rendermode InteractiveServer
+@inject IListaInterface listaServices
+@inject NavigationManager NavigationManager
+
 
 @using System.Globalization
 
@@ -53,7 +55,7 @@
                                 @(product.Bought ? "Sim" : "Não")
                             </td>
                             <td>
-                                <button class="btn btn-success" >Editar</button>
+                                <button class="btn btn-success" @onclick="() => EditProduct(product.Id)">Editar</button>
                                 <button class="btn btn-danger" @onclick="() => DeleteProduct(product.Id)">Excluir</button>
                             </td>
                         </tr>
@@ -87,17 +89,13 @@ else
 
     public async Task DeleteProduct(int id)
     {
-        try
-        {
-            Console.WriteLine($"Attempting to delete product with ID: {id}"); // Logging for debugging
-            await listaServices.DeleteProductAsync(id);
-            products = await listaServices.GetAllProductsAsync();
-            StateHasChanged();  // Refresh the product list
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error deleting product: {ex.Message}"); // Error logging
-        }
+        await listaServices.DeleteProductAsync(id);
+        products = await listaServices.GetAllProductsAsync();
+    }
+
+    public void EditProduct(int id)
+    {
+        NavigationManager.NavigateTo($"/EditProduct/{id}");
     }
 
 }

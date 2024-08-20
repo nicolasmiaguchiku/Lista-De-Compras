@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ListaDeCompras.Migrations
 {
     [DbContext(typeof(ListaContext))]
-    [Migration("20240818164742_CorreçaoModelProduct")]
-    partial class CorreçaoModelProduct
+    [Migration("20240819231319_ModelProduct")]
+    partial class ModelProduct
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

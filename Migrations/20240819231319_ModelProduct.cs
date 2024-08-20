@@ -5,7 +5,7 @@
 namespace ListaDeCompras.Migrations
 {
     /// <inheritdoc />
-    public partial class CorreçaoModelProduct : Migration
+    public partial class ModelProduct : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
