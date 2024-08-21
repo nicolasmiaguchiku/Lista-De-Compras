@@ -1,54 +1,55 @@
 ﻿@page "/EditProduct/{Id:int}"
 @inject IListaInterface ListaServices
+@rendermode InteractiveServer
 @inject NavigationManager NavigationManager
 
 <PageTitle>Editar Produto</PageTitle>
 
-<h3>Editar Produto</h3>
-
-@if (product == null)
+@if(product == null)
 {
-    <p>Carregando produto...</p>
+    <p>Carregando...</p>
 }
 else
 {
-    <EditForm Model="product" OnValidSubmit="HandleValidSubmit">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
+    <div style="max-width: 600px; margin: 0 auto;padding: 20px;border: 1px solid #ddd; border-radius: 5px;">
+        <h3 style="text-align: center;">Editar Produto</h3>
+        <EditForm Model="@product" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <div class="mb-3">
+                <label for="productName" class="form form-table">Produto:</label>
+                <InputText class="form form-control" id="productName" @bind-Value="@product.Name" />
+                <ValidationMessage For="@(() => product.Name)" />
+            </div>
 
-        <div class="form-group">
-            <label for="name">Nome</label>
-            <InputText id="name" class="form-control" @bind-Value="product.Name" />
-        </div>
+            <div class="mb-3">
+                <label for="price">Preço</label>
+                <InputNumber id="price" class="form form-control" @bind-Value="product.Price" />
+            </div>
 
-        <div class="form-group">
-            <label for="price">Preço</label>
-            <InputNumber id="price" class="form-control" @bind-Value="product.Price" />
-        </div>
+            <div class="mb-3">
+                <label for="category">Categoria</label>
+                <select id="category" class="form form-select" @bind="product.Category">
+                    @foreach (var category in Enum.GetValues(typeof(ProductCategory)))
+                    {
+                        <option value="@category">@category</option>
+                    }
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="category">Categoria</label>
-            <select id="category" class="form-control" @bind="product.Category">
-                @foreach (var category in Enum.GetValues(typeof(ProductCategory)))
-                {
-                    <option value="@category">@category</option>
-                }
-            </select>
-        </div>
+            <div class="mb-3">
+                <label for="link" class="form form-table"> Link</label>
+                <InputText id="link" class="form form-control" @bind-Value="product.Link" />
+            </div>
 
-        <div class="form-group">
-            <label for="link">Link</label>
-            <InputText id="link" class="form-control" @bind-Value="product.Link" />
-        </div>
+            <div class="mb-3">
+                <label for="bought" class="form form-table">Comprado</label>
+                <InputCheckbox id="bought" class="form form-checkbox" @bind-Value="product.Bought" />
+            </div>
 
-        <div class="form-group">
-            <label for="bought">Comprado</label>
-            <InputCheckbox id="bought" class="form-check-input" @bind-Value="product.Bought" />
-        </div>
-
-        <button type="submit" class="btn btn-primary">Salvar</button>
-        <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancelar</button>
-    </EditForm>
+            <button type="submit" class="btn btn-outline-success">Salvar</button>
+            <button type="button" class="btn btn-outline-danger" @onclick="Cancel">Cancelar</button>
+        </EditForm>
+    </div>
 }
 
 @code {
@@ -64,8 +65,11 @@ else
 
     private async Task HandleValidSubmit()
     {
-        await ListaServices.EditProductAsync(product);
-        NavigationManager.NavigateTo("/");
+        if (product is not null)
+        {
+            await ListaServices.EditProductAsync(product);
+            NavigationManager.NavigateTo("/");
+        }
     }
 
     private void Cancel()

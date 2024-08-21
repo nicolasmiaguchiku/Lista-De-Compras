@@ -38,7 +38,19 @@ namespace ListaDeCompras.Services
 
         public async Task EditProductAsync(Product product)
         {
+            var prd = await _context.Products.FindAsync(product.Id);
+            if(prd is not null)
+            {
+                prd.Name = product.Name;
+                prd.Price = product.Price;
+                prd.Category = product.Category;
+                prd.Link = product.Link;
+                prd.Bought = product.Bought;
+            }
 
+            _context.Update(prd);
+            await _context.SaveChangesAsync();
+            
         }
 
         public async Task<Product?> GetProductByIdAsync(int? id)

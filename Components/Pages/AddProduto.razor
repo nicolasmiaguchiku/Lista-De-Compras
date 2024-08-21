@@ -5,8 +5,8 @@
 
 <PageTitle>Adicionar Produto</PageTitle>
 
-<div class="form-container">
-    <h1>Adicionar Produto</h1>
+<div style="max-width: 600px; margin: 0 auto;padding: 20px;border: 1px solid #ddd; border-radius: 5px;">
+    <h3 style="text-align: center">Adicionar Produto</h3>
     <EditForm Model="@product" OnValidSubmit="@AddNewProduct">
         <DataAnnotationsValidator />
         <div class="mb-3">
@@ -44,8 +44,8 @@
             <label for="productBought">Sim</label>
         </div>
         <div class="mb-3">
-            <button class="btn btn-success" type="submit">Adicionar produto</button>
-            <a class="btn btn-danger" href="/">Cancelar</a>
+            <button class="btn btn-outline-success" type="submit">Adicionar produto</button>
+            <a class="btn btn-outline-danger" href="/">Cancelar</a>
         </div>
     </EditForm>
 </div>
