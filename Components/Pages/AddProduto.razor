@@ -34,7 +34,7 @@
             <ValidationMessage For="@(() => product.Category)" />
         </div>
         <div class="mb-3">
-            <label for="productLink" class="form form-table">Link</label>
+            <label for="productLink" class="form form-table">Link:</label>
             <InputText class="form form-control" id="productLink" placeholder="Digite o link do produto" @bind-Value="@product.Link" />
             <ValidationMessage For="@(() => product.Link)" />
         </div>
@@ -52,16 +52,16 @@
 
 @code {
     private Product product = new Product();
-    private bool isValid = true;
+    //private bool isValid = true;
 
     public async Task AddNewProduct()
     {
 
-        isValid = true;
+        /*isValid = true;
         if (product.Category == ProductCategory.Nenhum)
         {
             isValid = false;
-        }
+        }*/
 
         if (product is not null)
         {

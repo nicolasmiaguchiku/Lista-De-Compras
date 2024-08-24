@@ -19,7 +19,7 @@ namespace ListaDeCompras.Models
         [Required(ErrorMessage = "Nome do produto é obrigatório.")]
         public string? Name { get; set; }
 
-        [Range(0.01, double.MaxValue, ErrorMessage = "O valor do produto é obrigatório")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Valor do produto é obrigatório")]
         public double Price { get; set; }
 
         [CategoryRequired(ErrorMessage = "Categoria do produto é obrigatório.")]

@@ -14,20 +14,18 @@
 {
     <div class="row">
         <div class="col-md-2">
-            <form>
+            <form @onsubmit="ApplyFilter">
                 <div class="mb-3">
-                    <label class="form-label">Categoria:</label>
-                    <select class="form-select">
-                        <option value="">Todos</option>
-                        @foreach (var category in Enum.GetValues(typeof(ProductCategory)))
+                    <label class="form-label">Filtro</label>
+                    <select class="form-select" @bind="filter.FilterString">
+                        @foreach (var category in Enum.GetValues(typeof(FilterCategory)))
                         {
                             <option value="@category">@category</option>
                         }
                     </select>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Filtrar</button>
-                <button type="button" class="btn btn-primary">Limpar</button>
+                <button type="button" class="btn btn-primary" @onclick="ClearFilter">Limpar</button>
             </form>
         </div>
         <div class="col-md-10">
@@ -76,27 +74,42 @@ else
 
 @code
 {
+    private Filter filter = new Filter { FilterString = "Todos" };
+
     private List<Product> products = new List<Product>();
 
     protected override async Task OnInitializedAsync()
     {
+        products = await listaServices.GetProductsByCategoryAsync(filter.FilterString);
+    }
+
+    private async Task ApplyFilter()
+    {
+        products = await listaServices.GetProductsByCategoryAsync(filter.FilterString);
+    }
+
+    private async Task ClearFilter()
+    {
+        filter.FilterString = "Todos";
         products = await listaServices.GetAllProductsAsync();
     }
+
 
     private string FormatPrice(decimal price)
     {
         return price.ToString("N2", new CultureInfo("pt-BR"));
     }
 
+
     public async Task DeleteProduct(int id)
     {
         await listaServices.DeleteProductAsync(id);
-        products = await listaServices.GetAllProductsAsync();
+        products = await listaServices.GetProductsByCategoryAsync(filter.FilterString);
     }
+
 
     public void EditProduct(int id)
     {
         NavigationManager.NavigateTo($"/EditProduct/{id}");
     }
-
 }

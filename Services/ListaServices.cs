@@ -15,8 +15,29 @@ namespace ListaDeCompras.Services
 
         public async Task<List<Product>> GetAllProductsAsync()
         {
-            var lista = await _context.Products.ToListAsync();
+            var lista = await _context.Products.OrderBy(p => p.Name).ToListAsync();
             return lista;
+        }
+
+        public async Task<List<Product>> GetProductsByCategoryAsync(string category)
+        {
+            IQueryable<Product> consulta = _context.Products;
+
+            if (category == "Todos")
+            {
+                return await GetAllProductsAsync();
+            }
+
+            if (Enum.TryParse(category, out ProductCategory categoryEnum))
+            {
+                consulta = consulta.Where(p => p.Category == categoryEnum);
+            }
+            else
+            {
+                return new List<Product>();
+            }
+
+            return await consulta.OrderBy(p => p.Name).ToListAsync();
         }
 
         public async Task AddProductAsync(Product product)
@@ -46,9 +67,9 @@ namespace ListaDeCompras.Services
                 prd.Category = product.Category;
                 prd.Link = product.Link;
                 prd.Bought = product.Bought;
+                _context.Update(prd);
             }
 
-            _context.Update(prd);
             await _context.SaveChangesAsync();
             
         }
